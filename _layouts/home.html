@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<div class="home">
+    <div class="welcome_message row">
+        <div class="col-md-12">
+            <h3 class="message_label"><span>Welcome!</span></h3>
+        </div>
+        <div class="col-md-5"><img src="" alt=""></div>
+        <div class="message_content col-md-7">
+            <h2 class="message_title"></h2>
+            <p></p>
+        </div>
+    </div>
+    {{ content }}
+
+    {%- if site.posts.size > 0 -%}
+
+    {%- for post in site.posts -%}
+    <article id="post-125"
+        class="col-md-12 post-125 post type-post status-publish format-standard hentry category-uncategorized">
+
+        <div class="entry-wrapper">
+            <span class="entry-border">
+                <div class="dashicons dashicons-editor-alignleft"></div>
+            </span>
+            <div class="entry-content-wrapper">
+                <header class="entry-header">
+                    <div class="entry-meta">
+                        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                        <time class="entry-date published"><a
+                                href="{{ post.url | relative_url }}">{{ post.date | date: date_format }}</a></time>
+                    </div>
+                    <h2 class="entry-title"><a href="{{ post.url | relative_url }}"
+                            rel="bookmark">{{ post.title | escape }}</a></h2>
+                </header>
+
+                <div class="entry-content">
+                    {%- if site.show_excerpts -%}
+                    {{ post.excerpt }}
+                    {%- endif -%} </div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </article>
+    {%- endfor -%}
+    <!-- <ul class="post-list">
+        {%- for post in site.posts -%}
+        <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+            {%- endif -%}
+        </li>
+        {%- endfor -%}
+    </ul> -->
+
+    {%- endif -%}
+
+</div>

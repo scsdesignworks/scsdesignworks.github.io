@@ -1,1 +1,10 @@
-theme: jekyll-theme-minimal
+
+
+title: Takiya Kalam
+baseurl: ""
+url: "http://takiyakalam.com/"
+
+theme: minima
+plugins:
+  - jekyll-feed
+show_excerpts: true

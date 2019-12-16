@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{page.title}} | {{site.title}}</title>
+
+    <link rel='stylesheet' id='photolab-layout-css' href='/css/layout.css?ver=1.1.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='photolab-magnific-popup-css' href='/css/magnific-popup.css?ver=1.1.0' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='dashicons-css' href='http://takiyakalam.com/wp-includes/css/dashicons.min.css?ver=4.3.1'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='photolab-fonts-css'
+        href='//fonts.googleapis.com/css?family=Libre+Baskerville%3A400%2C700%2C400italic%7COpen+Sans%3A300%2C400%2C700%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='photolab-style-css' href='/css/style.css?ver=1.1.0' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='photolab-font-awesome-css'
+        href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.1' type='text/css'
+        media='all' />
+    <script type='text/javascript' src='/js/jquery.js?ver=1.11.3'></script>
+    <script type='text/javascript' src='/js/jquery-migrate.min.js?ver=1.2.1'></script>
+
+    <link rel="icon" href="/img/cropped-FullSizeRender-32x32.jpg"
+        sizes="32x32" />
+    <link rel="icon" href="/img/cropped-FullSizeRender-192x192.jpg"
+        sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed"
+        href="/img/cropped-FullSizeRender-180x180.jpg">
+
+</head>
+
+<body class="page page-id-333 page-template-default">
+    <div id="page" class="hfeed site">
+
+        <header id="masthead" class="site-header" role="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="site-branding">
+                            <h1 class="site-title"><a href="{{site.url}}" rel="home">{{site.title}}</a></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="clear">
+                            <ul class="social-list list-header">
+                                <li class="social-list_item item-facebook"><a class="social-list_item_link"
+                                        href="https://www.facebook.com/studiotakiyakalam?fref=ts"><i
+                                            class="fa fa-facebook-official"></i></a></li>
+                            </ul>
+                            <div class="main-nav-wrap">
+                                <nav id="site-navigation" class="main-navigation">
+                                    <ul id="menu-takiya-kalam" class="sf-menu">
+                                        {%- assign default_paths = site.pages | map: "path" -%}
+                                        {%- assign page_paths = site.header_pages | default: default_paths -%}
+                                        {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+
+                                        {%- for path in page_paths -%}
+                                        {%- assign my_page = site.pages | where: "path", path | first -%}
+                                        {%- if my_page.url != '/' -%}
+                                        <li
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92 item-type-4 ">
+                                            <a class="page-link"
+                                                href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                                        </li>
+                                        {%- endif -%}
+                                        {%- endfor -%}
+                                    </ul>
+                                </nav>
+                            </div><!-- #site-navigation -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- #masthead -->
+        <div class="header-image-box">
+            <div class="page-header-wrap">
+                <img src="/img/cropped-cropped-cropped-cropped-tk15-e144055403540811.jpg"
+                    alt="Takiya Kalam">
+                <div class="container">
+                    <div class="page-header header-type-1 with-img">
+                        <h1 class="entry-title">{{page.title}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="site-content">
+            <div id="primary" class="container">
+                <div class="row">
+                    <article id="post-333" class="col-sm-12 post-333 page type-page status-publish hentry">
+                        <div class="entry-content">
+                            {{ content }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="container">
+            </div>
+        </footer>
+        <div id="back-top"><a href="#">
+                <div class="dashicons dashicons-arrow-up-alt2"></div>
+            </a></div>
+    </div>
+</body>
+
+</html>
